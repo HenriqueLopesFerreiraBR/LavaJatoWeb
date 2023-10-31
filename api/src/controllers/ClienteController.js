@@ -75,6 +75,13 @@ const ClienteController = {
              res.status(400).json(error);
         }
     },
+    AgendarServico: async(req,res)=>{
+        
+    },
+    
+    RealizarPagamento: async(req,res)=>{
+
+    }
 };
 
 module.exports = ClienteController;
