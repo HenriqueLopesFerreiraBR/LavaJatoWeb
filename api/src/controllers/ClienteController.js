@@ -57,31 +57,30 @@ const ClienteController = {
             });
 
             await newCliente.save();
-            res.status(201).json({message:"Cliente Atualizado com sucesso", clienteUpdated});
+            res.status(201).json({
+                message: "Cliente Atualizado com sucesso",
+                clienteUpdated,
+            });
         } catch (error) {
             res.status(433).json(error);
         }
     },
-    delete: async (req,res)=>{
+    delete: async (req, res) => {
         try {
-            const id = req.params.id
-            if(!id){
+            const id = req.params.id;
+            if (!id) {
                 return res.status(433).json("id do cliente Invalido");
             }
-            await ClienteModel.findByIdAndDelete(id)
+            await ClienteModel.findByIdAndDelete(id);
 
             res.status(205).json("Cliente Deletado com sucesso");
         } catch (error) {
-             res.status(400).json(error);
+            res.status(400).json(error);
         }
     },
-    AgendarServico: async(req,res)=>{
-        
-    },
-    
-    RealizarPagamento: async(req,res)=>{
+    AgendarServico: async (req, res) => {},
 
-    }
+    RealizarPagamento: async (req, res) => {},
 };
 
 module.exports = ClienteController;
