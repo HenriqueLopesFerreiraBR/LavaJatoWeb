@@ -10,7 +10,7 @@ dotenv.config()
 const port = process.env.PORT
 
 //Rotas
-// const TarefasRouter = require('./src/router/tarefaRouter')
+const ClienteRouter = require('./src/routes/clienteRouter');
 // const CategoriaRouter = require('./src/router/categoriaRouter')
 
 //middleware
@@ -25,6 +25,7 @@ app.use(cors())
 //chamada do banco de dados
 DB.connection
 
+app.use('/api/cliente',ClienteRouter)
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}!`))
